@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гра "Змійка"</title>
+    <link rel="stylesheet" href="Games.css">
+</head>
+<body>
+    <nav>
+        <ul>
+          <a><img src="icon.png" alt="Змійка"><img></a>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="Games.html">Ігри</a></li>
+        </ul>
+      </nav>
+    <!-- Музика на сайті -->
+    <audio id="background-music" loop>
+        <source src="riding-through-blue-skies-298649.mp3" type="audio/mpeg">
+    </audio>
+
+    <header>
+        <h1>Гра "Змійка"</h1>
+        <p>Виберіть версію та грайте онлайн</p>
+    <div id="buttons-container"> 
+        <button id="toggle-music" class="btn">🔊 Увімкнути музику</button>
+        <button id="toggle-scroll" class="btn">🔒 Блокувати прокрутку</button>
+    </div> 
+    </header>
+
+    <!-- Посилання на ігри -->
+    <section class="game-links">
+        <h2>Обрати версію гри</h2>
+        <a href="#" class="btn game-link" data-src="https://st.8games.net/7/8g/igra-zmejka-reshatel/">🐍 Змійка Рішення</a>
+        <a href="#" class="btn game-link" data-src="https://st.8games.net/10/igra-zmeinaya-arena/">🔥 Змійка Арена</a>
+        <a href="#" class="btn game-link" data-src="https://st1.8games.net/10/8g/igra-zmeinyy-shuter-bashennaya-bitva/">💥 Змійка Шутер</a>
+        <a href="#" class="btn game-link" data-src="https://games.crazygames.com/uk_UA/mr-stretch-and-the-stolen-fortune/index.html?v=1.327">🎮 Mr Stretch</a>
+        <a href="#" class="btn game-link" data-src="https://play.gamepix.com/classic-snake-html5/embed?sid=0C25L">🎮 Classic Snake</a>
+        <a href="#" class="btn game-link" data-src="https://html5.gamemonetize.co/6nvgvas8e8tg6ln2sxvv1lvx3qgq1eim/">🔥 Змійка 2</a>
+        <a href="#" class="btn game-link" data-src="https://playsnake.net/snake-game/">🌟 Modern Snake</a>
+    </section>
+
+    <!-- Контейнер для гри -->
+    <div id="game-container" class="hidden">
+        <iframe id="game-frame" class="game-frame"></iframe>
+    </div>
+
+    <script>
+        let currentGameIframe;
+        document.querySelectorAll('.game-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                let gameUrl = this.getAttribute('data-src');
+                let gameContainer = document.getElementById("game-container");
+                let gameFrame = document.getElementById("game-frame");
+
+                // Завантаження гри
+                gameFrame.src = gameUrl;
+                currentGameIframe = gameFrame;
+                gameContainer.classList.remove("hidden");
+                gameContainer.classList.add("show");
+            });
+        });
+
+        // Музика
+        let music = document.getElementById("background-music");
+        let toggleMusicBtn = document.getElementById("toggle-music");
+        let isPlaying = false;
+
+        toggleMusicBtn.addEventListener("click", function() {
+            if (isPlaying) {
+                music.pause();
+                toggleMusicBtn.textContent = "🔊 Увімкнути музику";
+            } else {
+                music.play();
+                toggleMusicBtn.textContent = "🔇 Вимкнути музику";
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Блокування прокрутки
+        let toggleScrollBtn = document.getElementById("toggle-scroll");
+        let isScrollBlocked = false;
+
+        toggleScrollBtn.addEventListener("click", function() {
+            if (isScrollBlocked) {
+                document.body.style.overflow = "auto"; // Відновити прокрутку
+                toggleScrollBtn.textContent = "🔒 Блокувати прокрутку";
+            } else {
+                document.body.style.overflow = "hidden"; // Блокувати прокрутку
+                toggleScrollBtn.textContent = "🔓 Розблокувати прокрутку";
+            }
+            isScrollBlocked = !isScrollBlocked;
+        });
+    </script>
+
+</body>
+</html>
