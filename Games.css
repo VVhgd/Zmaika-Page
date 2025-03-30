@@ -1,0 +1,179 @@
+@font-face {
+    font-family: 'Font'; /* Назва шрифта */
+    src: url('fonts/Font.ttf') format('truetype'); /* Правильний формат для .otf */
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Font1'; /* Назва шрифта */
+    src: url('fonts/Font1.otf') format('truetype'); /* Правильний формат для .otf */
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1b1b1b;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 20px;
+    font-family: "Font";
+}
+h2{
+    font-family: "Font1";
+}
+
+h1 {
+    font-size: 36px;
+    margin: 0;
+    font-family: "Font";
+}
+
+.btn {
+    display: inline-block;
+    background: #3e856f;
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease-in-out;
+    border: none;
+    cursor: pointer;
+    font-family: "Font";
+
+}
+
+
+.btn:hover {
+    background: #224e53;
+    transform: scale(1.05);
+}
+
+.game-links {
+    margin: 20px 0;
+}
+
+#toggle-music {
+    margin-top: 10px;
+}
+
+/* Контейнер гри */
+#game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#game-container.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#game-container.hidden {
+    display: none;
+}
+
+.game-frame {
+    width: 80%;
+    height: 500px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 25px rgba(63, 90, 121, 0.603);
+}
+nav ul {
+    display: flex; 
+    justify-content: space-evenly; 
+    align-items: center; 
+    margin: 0px;
+}
+  
+nav ul li {
+    display: inline-block; 
+    margin: 0 15px;
+}
+nav {
+    position: sticky;
+    top: 0; /* Меню буде прикріплене до верху */
+    background-color: rgb(93, 132, 128);
+    height: 43px;
+    text-align: center;
+    margin: 0;
+    border-radius: 8px;
+    z-index: 1000; /* Для того, щоб меню було поверх інших елементів */
+  }
+nav ul li a {
+    color: white; 
+    text-decoration: none; 
+    font-size: 18px; 
+    padding: 10px 20px; 
+    display: block;
+    font-size: 20px;
+    transition: 2s;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+a img{
+    width: 35px;
+    height: auto;
+    position: absolute;
+    left: 30px;
+    top: 5px;
+    margin: 0;
+}
+nav ul li a:hover {
+   transition: background-color, 1s; ;
+    background-color: #7a9596; 
+    border-radius: 8px;
+}
+/* Загальні стилі для фіксованих кнопок */
+.fixed-btn {
+    position: fixed; /* Фіксоване розташування */
+    bottom: 20px; /* Відстань від низу екрана */
+    left: 20px; /* Відстань від лівого краю екрану */
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Зелений колір для кнопки */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1000; /* Вищий індекс для кнопок */
+    margin: 10px;
+    transition: background 0.3s ease;
+}
+
+#buttons-container {
+    position: fixed; /* Фіксована позиція */
+    bottom: 20px; /* Відступ зверху */
+    right: 20px; /* Відступ справа */
+    z-index: 1000; /* Забезпечує, що кнопки будуть поверх інших елементів */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button {
+    background-color: #4CAF50; /* Зелене тло для кнопок */
+    color: white;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #388E3C;
+}
+
+button {
+    font-size: 16px;
+}

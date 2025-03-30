@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'Font'; /* Назва шрифта */
+    src: url('fonts/Font.ttf') format('truetype'); /* Правильний формат для .otf */
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Font1'; /* Назва шрифта */
+    src: url('fonts/Font1.otf') format('truetype'); /* Правильний формат для .otf */
+}
+body{
+    background-color: black;
+    padding: 0px;
+    margin: 0px;
+}
+h1{
+    color: white;
+    font-family: 'Font'; 
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    font-size: 60px;
+}
+nav ul {
+    display: flex; 
+    justify-content: space-evenly; 
+    align-items: center; 
+    margin: 0px;
+}
+  
+nav ul li {
+    display: inline-block; 
+    margin: 0 15px;
+}
+nav {
+    position: sticky;
+    top: 0; /* Меню буде прикріплене до верху */
+    background-color: rgb(93, 132, 128);
+    height: 43px;
+    text-align: center;
+    margin: 0;
+    border-radius: 8px;
+    z-index: 1000; /* Для того, щоб меню було поверх інших елементів */
+  }
+nav ul li a {
+    color: white; 
+    text-decoration: none; 
+    font-size: 18px; 
+    padding: 10px 20px; 
+    display: block;
+    font-size: 20px;
+    transition: 2s;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+a img{
+    width: 35px;
+    height: auto;
+    position: absolute;
+    left: 30px;
+    top: 5px;
+    margin: 0;
+}
+nav ul li a:hover {
+   transition: background-color, 1s; ;
+    background-color: #7a9596; 
+    border-radius: 8px;
+}
+p {
+    font-size: 20px; /* Розмір шрифту */
+    line-height: 1.8; /* Оптимальна висота рядка для читабельності */
+    color: #ffffff; /* Темно-сірий колір тексту */
+    text-align: center; /* Вирівнювання тексту по ширині */
+    margin-bottom: 15px; /* Відступ між абзацами */
+    text-indent: 30px;
+    font-family: "Font1"; 
+    padding: 10px;
+    border: 5px solid rgb(8, 81, 71);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+p::first-letter {
+    font-size: 24px;
+    font-weight: bold;
+    color: #55ae96; /* Червоний колір першої літери */
+}
+.Button a{
+    background-color: #55ae96;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+    transition: 1s;
+    justify-content: center; 
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.Button a:hover{
+    background-color: #7a9596;
+    scale: 1.1;
+    transition: color scale 1s;
+    border-radius: 8px;
+}
